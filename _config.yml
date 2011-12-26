@@ -1,5 +1,5 @@
 auto: false
-permalink: pretty
+permalink: /:title
 pygments: true
 exclude: 
 - _config.yml
