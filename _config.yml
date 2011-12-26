@@ -1,0 +1,9 @@
+auto: false
+permalink: pretty
+pygments: true
+exclude: 
+- _config.yml
+- virtualhostconfig
+- new
+- rakefile.rb
+- template.markdown

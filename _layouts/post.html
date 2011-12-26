@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div id="post">
+  <h1><a href="{{ page.url }}" title='{{ page.title }}' class='post-title'>
+      {{ page.title }}
+  </a></h1>
+  <span class='alt date'>{{ page.date | date_to_string }}</span>
+  {{ content }}
+</div>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="minhajuddin">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<g:plusone size="medium"></g:plusone>
+<div id="related">
+  <h2>similar posts</h2>
+  <ul class="posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <span class="date">{{ post.date | date_to_string }}</span> &raquo;
+        <a href="{{ post.url }}" title='{{ post.title }} {{ post.content | strip_html | truncate: 250 }}'>{{ post.title | truncate: 80   }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+<hr />
+<div id='comments'>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_identifier = '{{ page.id }}';
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://minhajuddin.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+   </script>
+ </div>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
