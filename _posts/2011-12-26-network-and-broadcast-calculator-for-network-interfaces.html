@@ -9,7 +9,7 @@ published: true
   <p>Address: <input id='address' /></p>
 </div>
 
-<div id='result'>
+<div id='results'>
   <p>Broadcast: <span class='broadcast'></span></p>
   <p>Network: <span class='network'></span></p>
 </div>
@@ -56,8 +56,8 @@ function long2ip (ipl) {
         network = ( address & subnet )
         broadcast = ( address | ( ~ subnet ) )
 
-        $("#result .broadcast").html(long2ip(broadcast));
-        $("#result .network").html(long2ip(network));
+        $("#results .broadcast").html(long2ip(broadcast));
+        $("#results .network").html(long2ip(network));
       })
   })
 </script>
